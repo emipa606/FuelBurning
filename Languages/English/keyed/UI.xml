@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DesignatorCleanFuel>clean fuel</DesignatorCleanFuel>
+  <DesignatorCleanFuelDesc>Deconstruct only sprinkled fuel. </DesignatorCleanFuelDesc>
+  <DesignatorNoFireFightingExpand>Expand no firefighting area</DesignatorNoFireFightingExpand>
+  <DesignatorNoFireFightingExpandDesc>Colonists will not do firefighting activities in this area.</DesignatorNoFireFightingExpandDesc>
+  <DesignatorNoFireFightingClear>Clear no firefighting area</DesignatorNoFireFightingClear>
+  <DesignatorNoFireFightingClearDesc>Removes a no firefighting area. </DesignatorNoFireFightingClearDesc>
+
+</LanguageData>

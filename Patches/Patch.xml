@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/DesignationCategoryDef[defName="Security"]/specialDesignatorClasses</xpath>
+    <value>
+      <li>FuelBurning.Designator_CleanFuel</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
+    <value>
+      <li>FuelBurning.Designator_AreaNoFireFightingExpand</li>
+      <li>FuelBurning.Designator_AreaNoFireFightingClear</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/WorkGiverDef[defName="FightFires"]/giverClass</xpath>
+    <value>
+      <giverClass>FuelBurning.WorkGiver_ExtendedFightFires</giverClass>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DesignatorCleanFuel>燃料撤去</DesignatorCleanFuel>
+  <DesignatorCleanFuelDesc>散布された燃料のみを撤去します。</DesignatorCleanFuelDesc>
+  <DesignatorNoFireFightingExpand>消火禁止ゾーン</DesignatorNoFireFightingExpand>
+  <DesignatorNoFireFightingExpandDesc>このゾーン内では、入植者は火災を消そうとはしなくなります。</DesignatorNoFireFightingExpandDesc>
+  <DesignatorNoFireFightingClear>消火禁止ゾーン 取消</DesignatorNoFireFightingClear>
+  <DesignatorNoFireFightingClearDesc>消火禁止ゾーンを取り消します。</DesignatorNoFireFightingClearDesc>
+</LanguageData>

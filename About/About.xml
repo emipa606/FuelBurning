@@ -7,6 +7,7 @@
   <supportedVersions>
     <li>1.0</li>
     <li>1.1</li>
+    <li>1.2</li>
   </supportedVersions>
   <modDependencies />
   <loadAfter />
@@ -46,6 +47,6 @@ Changelog
 -Release
 
 
-ãƒã‚°å ±å‘Šã‚’æ­“è¿Žã—ã¾ã™(welcome to the Bug Reports)
+バグ報告を歓迎します(welcome to the Bug Reports)
 and Please tell me if I have used incorrect grammar. I will try to correct it!!</description>
 </ModMetaData>

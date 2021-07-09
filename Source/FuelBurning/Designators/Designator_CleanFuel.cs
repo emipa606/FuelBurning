@@ -8,25 +8,28 @@ namespace FuelBurning
     {
         public Designator_CleanFuel()
         {
-            this.defaultLabel = "DesignatorCleanFuel".Translate();
-            this.defaultDesc = "DesignatorCleanFuelDesc".Translate();
-            this.icon = ContentFinder<Texture2D>.Get("UI/Designators/CleanFuel", true);
-            this.soundDragSustain = SoundDefOf.Designate_DragStandard;
-            this.soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
-            this.useMouseIcon = true;
-            this.soundSucceeded = SoundDefOf.Designate_Deconstruct;
-            this.hotKey = null;
+            defaultLabel = "DesignatorCleanFuel".Translate();
+            defaultDesc = "DesignatorCleanFuelDesc".Translate();
+            icon = ContentFinder<Texture2D>.Get("UI/Designators/CleanFuel");
+            soundDragSustain = SoundDefOf.Designate_DragStandard;
+            soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
+            useMouseIcon = true;
+            soundSucceeded = SoundDefOf.Designate_Deconstruct;
+            hotKey = null;
         }
 
         public override AcceptanceReport CanDesignateThing(Thing t)
         {
-            if (base.CanDesignateThing(t).Accepted)
+            if (!base.CanDesignateThing(t).Accepted)
             {
-                if(t is Building_SprinkledFuel)
-                {
-                    return true;
-                }
+                return false;
             }
+
+            if (t is Building_SprinkledFuel)
+            {
+                return true;
+            }
+
             return false;
         }
     }

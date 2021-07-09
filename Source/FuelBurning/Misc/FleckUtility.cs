@@ -4,7 +4,7 @@ using Verse;
 
 namespace FuelBurning
 {
-    class MoteUtility
+    internal class FleckUtility
     {
         public static void DrawHeatedMote(float ratio, Vector3 drawPos, IntVec3 pos, Map map)
         {
@@ -12,20 +12,21 @@ namespace FuelBurning
             {
                 return;
             }
+
             if (ratio < 0.33f)
             {
-                MoteMaker.ThrowSmoke(drawPos, map, 0.3f + ratio);
+                FleckMaker.ThrowSmoke(drawPos, map, 0.3f + ratio);
             }
             else if (ratio < 0.66f)
             {
-                MoteMaker.ThrowMetaPuff(drawPos, map);
-                MoteMaker.ThrowMicroSparks(drawPos, map);
+                FleckMaker.ThrowMetaPuff(drawPos, map);
+                FleckMaker.ThrowMicroSparks(drawPos, map);
             }
             else
             {
-                MoteMaker.ThrowMetaPuff(drawPos, map);
-                MoteMaker.ThrowMicroSparks(drawPos, map);
-                MoteMaker.ThrowFireGlow(pos, map, ratio - 0.3f);
+                FleckMaker.ThrowMetaPuff(drawPos, map);
+                FleckMaker.ThrowMicroSparks(drawPos, map);
+                FleckMaker.ThrowFireGlow(pos.ToVector3(), map, ratio - 0.3f);
             }
         }
     }

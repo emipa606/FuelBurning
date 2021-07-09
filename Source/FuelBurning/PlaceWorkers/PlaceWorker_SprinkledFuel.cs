@@ -1,48 +1,54 @@
 ﻿using RimWorld;
-using System.Collections.Generic;
 using Verse;
 
 namespace FuelBurning
 {
-    class PlaceWorker_SprinkledFuel : PlaceWorker
+    internal class PlaceWorker_SprinkledFuel : PlaceWorker
     {
-        public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null)
+        public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map,
+            Thing thingToIgnore = null, Thing thing = null)
         {
-            ThingDef checkThingDef = checkingDef as ThingDef;
-            CompProperties_FlammableLink prop = checkThingDef.GetCompProperties<CompProperties_FlammableLink>();
+            var checkThingDef = checkingDef as ThingDef;
+            var prop = checkThingDef?.GetCompProperties<CompProperties_FlammableLink>();
             if (prop == null)
             {
                 return true;
             }
 
-            List<Thing> things = loc.GetThingList(map);
-            for(int i = 0; i < things.Count; i++)
+            var things = loc.GetThingList(map);
+            foreach (var thing1 in things)
             {
-                if (things[i].def == ThingDefOf.Wall || (things[i].def.passability == Traversability.PassThroughOnly && things[i].def.category == ThingCategory.Item))
+                if (thing1.def == ThingDefOf.Wall || thing1.def.passability == Traversability.PassThroughOnly &&
+                    thing1.def.category == ThingCategory.Item)
                 {
                     return false;
                 }
-                CompProperties_FlammableLink prop2 = things[i].def.GetCompProperties<CompProperties_FlammableLink>();
+
+                var prop2 = thing1.def.GetCompProperties<CompProperties_FlammableLink>();
                 if (prop2 != null && prop.connectionID == prop2.connectionID)
                 {
                     return false;
                 }
 
-                BuildableDef curBuildDef = GenConstruct.BuiltDefOf(things[i].def);
-                if (curBuildDef != null && curBuildDef is ThingDef)
+                var curBuildDef = GenConstruct.BuiltDefOf(thing1.def);
+                if (curBuildDef is not ThingDef)
                 {
-                    ThingDef curDef = (ThingDef)curBuildDef;
-                    if(curDef == ThingDefOf.Wall)
-                    {
-                        return false;
-                    }
-                    prop2 = curDef.GetCompProperties<CompProperties_FlammableLink>();
-                    if (prop2 != null && prop.connectionID == prop2.connectionID)
-                    {
-                        return false;
-                    }
+                    continue;
+                }
+
+                var curDef = (ThingDef) curBuildDef;
+                if (curDef == ThingDefOf.Wall)
+                {
+                    return false;
+                }
+
+                prop2 = curDef.GetCompProperties<CompProperties_FlammableLink>();
+                if (prop2 != null && prop.connectionID == prop2.connectionID)
+                {
+                    return false;
                 }
             }
+
             return true;
         }
     }

@@ -1,10 +1,9 @@
-﻿namespace FuelBurning
+﻿namespace FuelBurning;
+
+public enum SparksFlyResult : byte
 {
-    public enum SparksFlyResult : byte
-    {
-        Undefine,
-        ZeroValue,
-        GrowFire,
-        TryBurning
-    }
+    Undefine,
+    ZeroValue,
+    GrowFire,
+    TryBurning
 }

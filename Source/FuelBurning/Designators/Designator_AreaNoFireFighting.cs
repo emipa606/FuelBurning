@@ -1,62 +1,61 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace FuelBurning
+namespace FuelBurning;
+
+public abstract class Designator_AreaNoFireFighting : Designator
 {
-    public abstract class Designator_AreaNoFireFighting : Designator_Area
+    private readonly DesignateMode mode;
+
+    public Designator_AreaNoFireFighting(DesignateMode mode)
     {
-        private readonly DesignateMode mode;
+        this.mode = mode;
+        soundDragSustain = SoundDefOf.Designate_DragStandard;
+        soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
+        useMouseIcon = true;
+    }
 
-        public Designator_AreaNoFireFighting(DesignateMode mode)
+    public override int DraggableDimensions => 2;
+    public override bool DragDrawMeasurements => true;
+
+    public static Area NoFireFightingArea(AreaManager areaManager)
+    {
+        Area result = areaManager.Get<Area_NoFireFighting>();
+        if (result != null)
         {
-            this.mode = mode;
-            soundDragSustain = SoundDefOf.Designate_DragStandard;
-            soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
-            useMouseIcon = true;
-        }
-
-        public override int DraggableDimensions => 2;
-        public override bool DragDrawMeasurements => true;
-
-        public static Area NoFireFightingArea(AreaManager areaManager)
-        {
-            Area result = areaManager.Get<Area_NoFireFighting>();
-            if (result != null)
-            {
-                return result;
-            }
-
-            result = new Area_NoFireFighting(areaManager);
-            areaManager.AllAreas.Add(result);
-
             return result;
         }
 
+        result = new Area_NoFireFighting(areaManager);
+        areaManager.AllAreas.Add(result);
 
-        public override AcceptanceReport CanDesignateCell(IntVec3 loc)
+        return result;
+    }
+
+
+    public override AcceptanceReport CanDesignateCell(IntVec3 loc)
+    {
+        if (!loc.InBounds(Map))
         {
-            if (!loc.InBounds(Map))
-            {
-                return false;
-            }
-
-            if (mode == DesignateMode.Add)
-            {
-                return !NoFireFightingArea(Map.areaManager)[loc];
-            }
-
-            return NoFireFightingArea(Map.areaManager)[loc];
+            return false;
         }
 
-        public override void DesignateSingleCell(IntVec3 c)
+        if (mode == DesignateMode.Add)
         {
-            NoFireFightingArea(Map.areaManager)[c] = mode == DesignateMode.Add;
+            return !NoFireFightingArea(Map.areaManager)[loc];
         }
 
-        public override void SelectedUpdate()
-        {
-            GenUI.RenderMouseoverBracket();
-            NoFireFightingArea(Map.areaManager).MarkForDraw();
-        }
+        return NoFireFightingArea(Map.areaManager)[loc];
+    }
+
+    public override void DesignateSingleCell(IntVec3 c)
+    {
+        NoFireFightingArea(Map.areaManager)[c] = mode == DesignateMode.Add;
+    }
+
+    public override void SelectedUpdate()
+    {
+        GenUI.RenderMouseoverBracket();
+        NoFireFightingArea(Map.areaManager).MarkForDraw();
     }
 }

@@ -1,10 +1,9 @@
 ﻿using RimWorld;
 
-namespace FuelBurning
+namespace FuelBurning;
+
+[DefOf]
+public static class FB_StatsDefOf
 {
-    [DefOf]
-    public static class FB_StatsDefOf
-    {
-        public static StatDef BurningTime;
-    }
+    public static StatDef BurningTime;
 }

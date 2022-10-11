@@ -1,25 +1,16 @@
 # FuelBurning
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of Steardliys mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1498128603
 
-- This mod has a &quot;no firefighting&quot;-zone tool that may not be apparent from the description
+- This mod has a "no firefighting"-zone tool that may not be apparent from the description
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/FuelBurning]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 
 # Beta 19 version
@@ -64,7 +55,7 @@ As you may know, the easiest way is to throw a Molotov.
 and Please tell me if I have used incorrect grammar. I will try to correct it!!
 
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -74,6 +65,7 @@ and Please tell me if I have used incorrect grammar. I will try to correct it!!
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 

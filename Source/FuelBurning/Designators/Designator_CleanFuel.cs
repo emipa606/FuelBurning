@@ -25,11 +25,6 @@ public class Designator_CleanFuel : Designator_Deconstruct
             return false;
         }
 
-        if (t is Building_SprinkledFuel)
-        {
-            return true;
-        }
-
-        return false;
+        return t is Building_SprinkledFuel;
     }
 }

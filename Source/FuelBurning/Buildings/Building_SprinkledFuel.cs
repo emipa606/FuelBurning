@@ -108,7 +108,7 @@ internal class Building_SprinkledFuel : Building
         // Launch
         if (mote.def.defName.Contains("ShotFlash"))
         {
-            var heat = mote.exactScale.x * 4f;
+            var heat = mote.ExactScale.x * 4f;
             if (flammableLinkcomp.TrySparksFly(heat) == SparksFlyResult.Undefine)
             {
                 FleckUtility.DrawHeatedMote(flammableLinkcomp.HeatRatio, base.DrawPos, Position, Map);

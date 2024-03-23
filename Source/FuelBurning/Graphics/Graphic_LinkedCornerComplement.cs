@@ -22,67 +22,59 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
     {
         distCenterCorner = new Vector2(0.5f, 0.5f).magnitude;
         coverOffsetDist = distCenterCorner - (size.magnitude * 0.5f);
-        vecs = new[]
-        {
-            new[]
-            {
+        vecs =
+        [
+            [
                 new Vector3(0.5f * size.x, 0f, -0.5f * size.y),
                 new Vector3(-0.5f * size.x, 0f, -0.5f * size.y),
                 new Vector3(-0.5f * size.x, slope, 0.5f * size.y)
-            },
-            new[]
-            {
+            ],
+            [
                 new Vector3(-0.5f * size.x, 0f, -0.5f * size.y),
                 new Vector3(-0.5f * size.x, slope, 0.5f * size.y),
                 new Vector3(0.5f * size.x, slope, 0.5f * size.y)
-            },
-            new[]
-            {
+            ],
+            [
                 new Vector3(-0.5f * size.x, slope, 0.5f * size.y),
                 new Vector3(0.5f * size.x, slope, 0.5f * size.y),
                 new Vector3(0.5f * size.x, 0f, -0.5f * size.y)
-            },
-            new[]
-            {
+            ],
+            [
                 new Vector3(0.5f * size.x, slope, 0.5f * size.y),
                 new Vector3(0.5f * size.x, 0f, -0.5f * size.y),
                 new Vector3(-0.5f * size.x, 0f, -0.5f * size.y)
-            }
-        };
-        compUVs = new[]
-        {
-            new[]
-            {
+            ]
+        ];
+        compUVs =
+        [
+            [
                 new Vector2(0.5f, 0f),
                 new Vector2(0f, 0f),
                 new Vector2(0f, 1f)
-            },
-            new[]
-            {
+            ],
+            [
                 new Vector2(0.5f, 0f),
                 new Vector2(0.5f, 1f),
                 new Vector2(1f, 1f)
-            },
-            new[]
-            {
+            ],
+            [
                 new Vector2(0f, 1f),
                 new Vector2(0.5f, 1f),
                 new Vector2(0.5f, 0f)
-            },
-            new[]
-            {
+            ],
+            [
                 new Vector2(1f, 1f),
                 new Vector2(1f, 0f),
                 new Vector2(0.5f, 0f)
-            }
-        };
-        tris = new[] { 0, 1, 2 };
-        colors = new[]
-        {
+            ]
+        ];
+        tris = [0, 1, 2];
+        colors =
+        [
             new Color32(255, 255, 255, 255),
             new Color32(255, 255, 255, 255),
             new Color32(255, 255, 255, 255)
-        };
+        ];
     }
 
     public override void Init(GraphicRequest req)
@@ -105,8 +97,8 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
                 continue;
             }
 
-            var unused = thing.DrawPos +
-                         (GenAdj.DiagonalDirectionsAround[i].ToVector3().normalized * coverOffsetDist);
+            _ = thing.DrawPos +
+                (GenAdj.DiagonalDirectionsAround[i].ToVector3().normalized * coverOffsetDist);
             if (CheckLinkedFourWays(position, thing, i))
             {
                 Printer_Mesh.PrintMesh(layer, default, GetCornerMesh(compUVs[i], i), cornerMat);

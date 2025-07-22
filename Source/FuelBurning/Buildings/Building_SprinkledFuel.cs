@@ -16,18 +16,14 @@ internal class Building_SprinkledFuel : Building
     {
         get
         {
-            if (graphicInt == null)
-            {
-                graphicInt =
-                    GraphicDatabase.Get<Graphic_LinkedCornerComplement>(def.graphicData.texPath,
-                        ShaderDatabase.Transparent);
-            }
+            graphicInt ??= GraphicDatabase.Get<Graphic_LinkedCornerComplement>(def.graphicData.texPath,
+                ShaderDatabase.Transparent);
 
             return graphicInt;
         }
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (!this.IsHashIntervalTick(TicksCheckCellInterval))
@@ -43,8 +39,8 @@ internal class Building_SprinkledFuel : Building
         var things = Map.thingGrid.ThingsListAt(Position);
         foreach (var thing in things)
         {
-            CheckSparksFromPawn(thing as Pawn);
-            CheckBulletFire(thing as Mote);
+            checkSparksFromPawn(thing as Pawn);
+            checkBulletFire(thing as Mote);
         }
     }
 
@@ -80,7 +76,7 @@ internal class Building_SprinkledFuel : Building
         dinfo.SetAmount(0);
     }
 
-    private void CheckSparksFromPawn(Pawn pawn)
+    private void checkSparksFromPawn(Pawn pawn)
     {
         if (pawn == null)
         {
@@ -98,7 +94,7 @@ internal class Building_SprinkledFuel : Building
         }
     }
 
-    private void CheckBulletFire(Mote mote)
+    private void checkBulletFire(Mote mote)
     {
         if (mote == null)
         {
@@ -113,9 +109,6 @@ internal class Building_SprinkledFuel : Building
             {
                 FleckUtility.DrawHeatedMote(flammableLinkcomp.HeatRatio, base.DrawPos, Position, Map);
             }
-#if DEBUG
-                Log.Message("Mote_ShotFlash base:" + base.DrawPos + " heat:" + heat + " cap:" + this.flammableLinkcomp.AmountOfHeat);
-#endif
         }
 
         // Impact
@@ -128,8 +121,5 @@ internal class Building_SprinkledFuel : Building
         {
             FleckUtility.DrawHeatedMote(flammableLinkcomp.HeatRatio, base.DrawPos, Position, Map);
         }
-#if DEBUG
-                Log.Message("Mote_ShotHit_Dirt base:" + base.DrawPos + " cap:" + this.flammableLinkcomp.AmountOfHeat);
-#endif
     }
 }

@@ -1,0 +1,42 @@
+ManifestFileVersion: 0
+CRC: 4230289701
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d03e750e724a3415ee9d98cd6a8f5515
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ce3b6d18a872ca8039cd5eb3c4fb7ef5
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d03e750e724a3415ee9d98cd6a8f5515
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Small_MenuIcon.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Large_Atlas.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Small_Atlas_Comp.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Mote/SplashOil.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Large_MenuIcon.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Blueprint_Atlas.png
+- Assets/Data/Mlie.FuelBurning/Sounds/Interact/Work/Construct/Pour_Sharp01.wav
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Medium_Atlas_Comp.png
+- Assets/Data/Mlie.FuelBurning/Sounds/Interact/Work/Construct/Splash_Liquid01.wav
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Small_Atlas.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/tmp/SprinkledFuel_Medium_MenuIcon.png
+- Assets/Data/Mlie.FuelBurning/Textures/UI/Designators/CleanFuel.png
+- Assets/Data/Mlie.FuelBurning/Textures/UI/Designators/NoFireFightingOn.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Medium_MenuIcon.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/tmp/SprinkledFuel_Large_MenuIcon.png
+- Assets/Data/Mlie.FuelBurning/Textures/UI/Designators/NoFireFightingOff.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Large_Atlas_Comp.png
+- Assets/Data/Mlie.FuelBurning/Sounds/Interact/Work/Construct/Carry_LiquidContainer01.wav
+- Assets/Data/Mlie.FuelBurning/Sounds/Interact/Work/Construct/Pour_Blunt01.wav
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/tmp/SprinkledFuel_Small_MenuIcon.png
+- Assets/Data/Mlie.FuelBurning/Textures/Things/Building/Linked/SprinkledFuels/SprinkledFuel_Medium_Atlas.png
+Dependencies: []

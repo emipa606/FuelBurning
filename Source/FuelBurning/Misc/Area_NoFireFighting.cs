@@ -15,7 +15,7 @@ public class Area_NoFireFighting : Area
 
     public override string Label => "NoFireFighting".Translate();
 
-    public override Color Color => new Color(0.9f, 0.2f, 0.1f);
+    public override Color Color => new(0.9f, 0.2f, 0.1f);
 
     public override int ListPriority => 10500;
 

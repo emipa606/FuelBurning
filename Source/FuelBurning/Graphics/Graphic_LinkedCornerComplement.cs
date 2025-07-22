@@ -12,11 +12,11 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
     private readonly float coverOffsetDist;
     private readonly float distCenterCorner;
 
-    private readonly Vector2 size = new Vector2(0.2f, 0.2f);
+    private readonly Vector2 size = new(0.2f, 0.2f);
     private readonly int[] tris;
     private readonly Vector3[][] vecs;
-    protected string compTexPath;
-    protected Material cornerMat;
+    private string compTexPath;
+    private Material cornerMat;
 
     public Graphic_LinkedCornerComplement()
     {
@@ -82,7 +82,7 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
         path = req.path;
         subGraphic = GraphicDatabase.Get<Graphic_Single>(req.path, ShaderDatabase.Transparent);
         compTexPath = $"{req.path}_Comp";
-        cornerMat = LoadCompMaterial(compTexPath);
+        cornerMat = loadCompMaterial(compTexPath);
     }
 
     public override void Print(SectionLayer layer, Thing thing, float extraRotation)
@@ -99,14 +99,14 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
 
             _ = thing.DrawPos +
                 (GenAdj.DiagonalDirectionsAround[i].ToVector3().normalized * coverOffsetDist);
-            if (CheckLinkedFourWays(position, thing, i))
+            if (checkLinkedFourWays(position, thing, i))
             {
-                Printer_Mesh.PrintMesh(layer, default, GetCornerMesh(compUVs[i], i), cornerMat);
+                Printer_Mesh.PrintMesh(layer, default, getCornerMesh(compUVs[i], i), cornerMat);
             }
         }
     }
 
-    protected bool CheckLinkedFourWays(IntVec3 position, Thing thing, int i)
+    private bool checkLinkedFourWays(IntVec3 position, Thing thing, int i)
     {
         switch (i)
         {
@@ -123,7 +123,7 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
             ShouldLinkWith(position + IntVec3.South, thing);
     }
 
-    protected Material LoadCompMaterial(string localPath)
+    private Material loadCompMaterial(string localPath)
     {
         var mat = MaterialPool.MatFrom(localPath, ShaderDatabase.Transparent);
         if (mat != null)
@@ -137,7 +137,7 @@ internal class Graphic_LinkedCornerComplement : Graphic_Linked
         return mat;
     }
 
-    protected Mesh GetCornerMesh(Vector2[] uvs, int direction)
+    private Mesh getCornerMesh(Vector2[] uvs, int direction)
     {
         var mesh = new Mesh { name = "ComplementMesh", vertices = vecs[direction], uv = uvs, colors32 = colors };
         mesh.SetTriangles(tris, 0);

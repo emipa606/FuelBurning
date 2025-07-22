@@ -7,7 +7,7 @@ public abstract class Designator_AreaNoFireFighting : Designator
 {
     private readonly DesignateMode mode;
 
-    public Designator_AreaNoFireFighting(DesignateMode mode)
+    protected Designator_AreaNoFireFighting(DesignateMode mode)
     {
         this.mode = mode;
         soundDragSustain = SoundDefOf.Designate_DragStandard;
@@ -15,7 +15,8 @@ public abstract class Designator_AreaNoFireFighting : Designator
         useMouseIcon = true;
     }
 
-    public override int DraggableDimensions => 2;
+    public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.Areas;
+
     public override bool DragDrawMeasurements => true;
 
     public static Area NoFireFightingArea(AreaManager areaManager)

@@ -1,4 +1,4 @@
-# FuelBurning
+# [FuelBurning (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2136323055)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -8,20 +8,18 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1498128603
 - This mod has a "no firefighting"-zone tool that may not be apparent from the description
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
 
-
 # Beta 19 version
 
--https://github.com/Steardliy/rim-FuelBurning/tree/B19][B19]-FuelBurning
+-[[B19]-FuelBurning](https://github.com/Steardliy/rim-FuelBurning/tree/B19)
 # Beta 18 version
 
--https://steamcommunity.com/sharedfiles/filedetails/?id=1206968611][B18]-FuelBurning [Steam]
+-[[B18]-FuelBurning](https://steamcommunity.com/sharedfiles/filedetails/?id=1206968611) [Steam]
 # Alpha 17 version
 
--http://steamcommunity.com/sharedfiles/filedetails/?id=1114157444][A17]-FuelBurning [Steam]
+-[[A17]-FuelBurning](http://steamcommunity.com/sharedfiles/filedetails/?id=1114157444) [Steam]
 ---------------------------------------------------------------------------------------
 # Description
 
@@ -36,7 +34,7 @@ As you may know, the easiest way is to throw a Molotov.
 
 # source
 
--https://github.com/Steardliy/rim-FuelBurning/tree/master]rim-FuelBurning
+-[rim-FuelBurning](https://github.com/Steardliy/rim-FuelBurning/tree/master)
 
 # Changelog
 
@@ -61,13 +59,12 @@ and Please tell me if I have used incorrect grammar. I will try to correct it!!
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2136323055]![Image](https://img.shields.io/github/v/release/emipa606/FuelBurning?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/FuelBurning?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2136323055) | tags: traps,  security,  ignition

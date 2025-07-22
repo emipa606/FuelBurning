@@ -16,13 +16,13 @@ internal class FlammableLinkComp : ThingComp
     public bool BurningNow
     {
         get => burningNowInt;
-        protected set => burningNowInt = value;
+        private set => burningNowInt = value;
     }
 
-    public float AmountOfHeat
+    private float AmountOfHeat
     {
         get => amountOfHeatInt;
-        protected set => amountOfHeatInt = value;
+        set => amountOfHeatInt = value;
     }
 
     public float HeatRatio => AmountOfHeat / compDef.ignitionDef.maxHeatCapacity;
@@ -41,7 +41,7 @@ internal class FlammableLinkComp : ThingComp
                 {
                     var thing = things[index];
                     var comp = thing.TryGetComp<FlammableLinkComp>();
-                    if (comp != null && IsConnected(comp))
+                    if (comp != null && isConnected(comp))
                     {
                         comp.TrySparksFly(compDef.ignitionDef.spreadPower);
                     }
@@ -51,7 +51,7 @@ internal class FlammableLinkComp : ThingComp
         else
         {
             BurningNow = false;
-            AmountOfHeat -= WeatherFactor(compDef.ignitionDef.easeCooling, CorrectWeatherFactorCooling);
+            AmountOfHeat -= weatherFactor(compDef.ignitionDef.easeCooling, CorrectWeatherFactorCooling);
             if (AmountOfHeat < 0)
             {
                 AmountOfHeat = 0;
@@ -66,7 +66,7 @@ internal class FlammableLinkComp : ThingComp
             return SparksFlyResult.ZeroValue;
         }
 
-        AmountOfHeat += WeatherFactor(sp, CorrectWeatherFactorHeating);
+        AmountOfHeat += weatherFactor(sp, CorrectWeatherFactorHeating);
         if (BurningNow)
         {
             var curFire = parent.Map.thingGrid.ThingAt<Fire>(parent.Position);
@@ -140,19 +140,6 @@ internal class FlammableLinkComp : ThingComp
         return 0f;
     }
 
-    public float HeatedBySparksOf(DamageInfo info)
-    {
-        foreach (var dDef in compDef.ignitionDef.multiplierSparks)
-        {
-            if (info.Def == dDef.damageDef)
-            {
-                return info.Amount * dDef.multiplier;
-            }
-        }
-
-        return 0f;
-    }
-
     public override void PostDestroy(DestroyMode mode, Map previousMap)
     {
         if (compDef.ignitionDef.fireRemains || mode != DestroyMode.KillFinalize)
@@ -172,12 +159,12 @@ internal class FlammableLinkComp : ThingComp
         }
     }
 
-    protected float WeatherFactor(float sp, float coeff)
+    private float weatherFactor(float sp, float coefficency)
     {
-        return sp - (sp * parent.Map.weatherManager.curWeather.rainRate * coeff);
+        return sp - (sp * parent.Map.weatherManager.curWeather.rainRate * coefficency);
     }
 
-    protected bool IsConnected(FlammableLinkComp comp)
+    private bool isConnected(FlammableLinkComp comp)
     {
         return comp.compDef.connectionID == compDef.connectionID;
     }

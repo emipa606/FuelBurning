@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Sprinkled fuel(concentrated) (blueprint) -->
+  <Blueprint_SprinkledFuelLarge.label>Sprinkled fuel(concentrated) (blueprint)</Blueprint_SprinkledFuelLarge.label>
+  <!-- EN: Sprinkled fuel (blueprint) -->
+  <Blueprint_SprinkledFuelMedium.label>Sprinkled fuel (blueprint)</Blueprint_SprinkledFuelMedium.label>
+  <!-- EN: Sprinkled fuel (diluted) (blueprint) -->
+  <Blueprint_SprinkledFuelSmall.label>Sprinkled fuel (diluted) (blueprint)</Blueprint_SprinkledFuelSmall.label>
+  <!-- EN: Sprinkled fuel(concentrated) (building) -->
+  <Frame_SprinkledFuelLarge.label>Sprinkled fuel(concentrated) (building)</Frame_SprinkledFuelLarge.label>
+  <!-- EN: It keeps burning for a long time but is hard to ignite. Sometimes it explodes when it burns. -->
+  <Frame_SprinkledFuelLarge.description>It keeps burning for a long time but is hard to ignite. Sometimes it explodes when it burns.</Frame_SprinkledFuelLarge.description>
+  <!-- EN: Sprinkled fuel (building) -->
+  <Frame_SprinkledFuelMedium.label>Sprinkled fuel (building)</Frame_SprinkledFuelMedium.label>
+  <!-- EN: This is a mixture of wood and fuel. It will burn well. -->
+  <Frame_SprinkledFuelMedium.description>This is a mixture of wood and fuel. It will burn well.</Frame_SprinkledFuelMedium.description>
+  <!-- EN: Sprinkled fuel (diluted) (building) -->
+  <Frame_SprinkledFuelSmall.label>Sprinkled fuel (diluted) (building)</Frame_SprinkledFuelSmall.label>
+  <!-- EN: It burns up by slight impact, and burns out quickly. It can be used as a fuse. -->
+  <Frame_SprinkledFuelSmall.description>It burns up by slight impact, and burns out quickly. It can be used as a fuse.</Frame_SprinkledFuelSmall.description>
+</LanguageData>

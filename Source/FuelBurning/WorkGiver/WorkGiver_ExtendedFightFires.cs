@@ -66,7 +66,7 @@ public class WorkGiver_ExtendedFightFires : WorkGiver_Scanner
         if ((pawn.Position - fire.Position).LengthHorizontalSquared <=
             MaxReservationCheckDistance * NearbyPawnRadius)
         {
-            return !FireIsBeingHandled(fire, pawn);
+            return !fireIsBeingHandled(fire, pawn);
         }
 
         LocalTargetInfo target = fire;
@@ -75,7 +75,7 @@ public class WorkGiver_ExtendedFightFires : WorkGiver_Scanner
             return false;
         }
 
-        return !FireIsBeingHandled(fire, pawn);
+        return !fireIsBeingHandled(fire, pawn);
     }
 
     public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -83,7 +83,7 @@ public class WorkGiver_ExtendedFightFires : WorkGiver_Scanner
         return new Job(JobDefOf.BeatFire, t);
     }
 
-    public static bool FireIsBeingHandled(Fire f, Pawn potentialHandler)
+    private static bool fireIsBeingHandled(Fire f, Pawn potentialHandler)
     {
         if (!f.Spawned)
         {

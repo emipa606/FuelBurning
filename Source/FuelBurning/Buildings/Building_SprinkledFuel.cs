@@ -10,16 +10,14 @@ internal class Building_SprinkledFuel : Building
 
     private FlammableLinkComp flammableLinkcomp;
 
-    private Graphic graphicInt;
-
     public override Graphic Graphic
     {
         get
         {
-            graphicInt ??= GraphicDatabase.Get<Graphic_LinkedCornerComplement>(def.graphicData.texPath,
+            field ??= GraphicDatabase.Get<Graphic_LinkedCornerComplement>(def.graphicData.texPath,
                 ShaderDatabase.Transparent);
 
-            return graphicInt;
+            return field;
         }
     }
 

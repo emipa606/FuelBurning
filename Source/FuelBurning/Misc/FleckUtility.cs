@@ -4,7 +4,7 @@ using Verse;
 
 namespace FuelBurning;
 
-internal class FleckUtility
+internal static class FleckUtility
 {
     public static void DrawHeatedMote(float ratio, Vector3 drawPos, IntVec3 pos, Map map)
     {

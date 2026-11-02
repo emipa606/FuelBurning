@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using System.Linq;
+using RimWorld;
 using Verse;
 
 namespace FuelBurning;
@@ -16,21 +17,21 @@ internal class PlaceWorker_SprinkledFuel : PlaceWorker
         }
 
         var things = loc.GetThingList(map);
-        foreach (var thing1 in things)
+        foreach (var thingDef in things.Select(thingItem => thingItem.def))
         {
-            if (thing1.def == ThingDefOf.Wall || thing1.def.passability == Traversability.PassThroughOnly &&
-                thing1.def.category == ThingCategory.Item)
+            if (thingDef == ThingDefOf.Wall || thingDef.passability == Traversability.PassThroughOnly &&
+                thingDef.category == ThingCategory.Item)
             {
                 return false;
             }
 
-            var prop2 = thing1.def.GetCompProperties<CompProperties_FlammableLink>();
+            var prop2 = thingDef.GetCompProperties<CompProperties_FlammableLink>();
             if (prop2 != null && prop.connectionID == prop2.connectionID)
             {
                 return false;
             }
 
-            var curBuildDef = GenConstruct.BuiltDefOf(thing1.def);
+            var curBuildDef = GenConstruct.BuiltDefOf(thingDef);
             if (curBuildDef is not ThingDef curDef)
             {
                 continue;

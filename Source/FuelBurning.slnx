@@ -1,9 +1,34 @@
 <Solution>
-  <Folder Name="/.github/">
-    <File Path="../.github/copilot-instructions.md" />
-  </Folder>
   <Configurations>
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="FuelBurning/FuelBurning.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/Stats/">
+    <File Path="../1.7/Defs/Stats/Stats_SprinkledFuel.xml" />
+  </Folder>
+  <Folder Name="/XML/Patches/">
+    <File Path="../Patches/Patch.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs_Buildings/">
+    <File Path="../1.7/Defs/ThingDefs_Buildings/Buildings_SprinkledFule.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/SoundDefs/">
+    <File Path="../1.7/Defs/SoundDefs/Interact_Sustainers_Work.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/Misc/">
+    <File Path="../1.7/Defs/Misc/IgnitionDef.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/UI.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/Effects/">
+    <File Path="../1.7/Defs/Effects/Effecter_Construction.xml" />
+    <File Path="../1.7/Defs/Effects/Mote.xml" />
+  </Folder>
 </Solution>
